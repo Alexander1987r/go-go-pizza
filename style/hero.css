@@ -1,0 +1,109 @@
+.hero {
+  position: relative;
+  background: linear-gradient(47deg, #eb8a14 0%, #ecd55a 100%);
+  padding: 80px 0 212px 0;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  margin-bottom: 43px;
+}
+.hero__container{
+}
+.hero__container::before{
+  content: '';
+  position: absolute;
+  width:calc(100vw/(320/261));
+  height:calc(100vw/(320/230));
+  max-width: 382px;
+  max-height: 337px;
+  background-image: url(../img/hero/hero-pizza.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  bottom: -43px;
+  right:calc(var(--offset-container) + 7px);
+ }
+.main__title {
+  font-weight: 900;
+  font-size: 38px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.hero__text {
+  font-size: 14px;
+  margin-bottom: 24px;
+  background-image: url(../img/hero/delivery-pizza.svg);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 20px 20px;
+  padding-left: 32px;
+}
+.hero__button {
+ border-radius: 32px;
+ background-color: var(--light);
+ padding: 8px 24px;
+ font-size: 14px;
+ font-weight: 600;
+ line-height: 1.4;
+ color: var(--orange);
+}
+
+@media(min-width:768px){
+  .hero {
+    padding: 116px 0 90px 0;
+    border-radius: 0 0 32px 32px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    margin-bottom: 60px;
+  }
+  .hero__container::before{
+    bottom: -60px;
+    width:calc(100vw/(768/382));
+    height:calc(100vw/(768/337));
+    max-width: 566px;
+    max-height: 499px;
+  }
+  .main__title {
+    font-size: 64px;
+    margin-bottom: 24px;
+  }
+  .hero__text {
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+  .hero__button {
+    font-size: 20px;
+   }
+}
+@media(min-width:1024px){
+  .hero {
+    padding: 126px 0 80px 0;
+    margin-bottom: 82px;
+  }
+  .hero__container::before{
+    bottom: -82px;
+    width:calc(100vw/(1024/566));
+    height:calc(100vw/(1024/499));
+    max-width: 611px;
+    max-height: 545px;
+
+    background-image: url(../img/hero/hero-pizza-desktop.png);
+    }
+}
+@media(min-width:1440px){
+  .hero {
+    padding: 140px 0 100px 0;
+    margin-bottom: 87px;
+  }
+  .hero__container::before{
+    bottom: -87px;
+    width:calc(100vw/(1440/670));
+    height:calc(100vw/(1440/591));
+    max-width: 670px;
+    max-height: 591px;
+  }
+
+  .main__title {
+    font-size: 80px;
+  }
+  .hero__text {
+    margin-bottom: 64px;
+  }
+}
