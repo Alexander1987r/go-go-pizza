@@ -14,10 +14,51 @@ const getToppingsToggle=()=>{
  };
   });
 }
-
-const renderPizzas=()=>{
-  
+/*
+ //альтернативный способ по METHED
+const getPizzas=async ()=>{
+  try{
+    const response=await fetch('https://amused-ripple-clove.glitch.me/api/products');
+    if(!response.ok){
+      throw new Error('Failed you fetch pizza products');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error){
+    console.error(`${error}`);
+  }
 }
+//
+const renderPizzas= async()=>{
+  const pizzas=await getPizzas();
+  console.log('Array Pizzas',pizzas);
+}
+*/
+
+
+//способ цепочками then
+ const getPizzas= ()=>async()=>{
+ return fetch('https://amused-ripple-clove.glitch.me/api/products')
+ .then((response)=>{
+  if(response.ok){
+    return response.json();
+   }
+   throw new Error('Failed you fetch pizza products');
+  })
+ .then((data)=>{
+  return data;
+ })
+ .catch((error)=>{
+  console.error(`Error fetching pizza products:${error}`);
+})
+
+}
+const renderPizzas=async()=>{
+  const pizzas=  getPizzas();
+  console.log('Массив вытянутый  с базы данных',await pizzas());
+}
+
+
 
 //обьявление функции инициализации
 const init=()=>{
