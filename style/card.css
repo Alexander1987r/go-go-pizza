@@ -5,7 +5,7 @@
   padding: 49px 8px 8px 8px;
   border-radius: 16px;
   background-color: var(--white);
-  min-height: 158px;
+  min-height: 166px;
 }
 .card__title {
   order:1;
