@@ -99,7 +99,10 @@ const renderToppings=async()=>{
     checkedToppingsArray.push(value);
   }
   console.log(checkedToppingsArray);
-  renderPizzas(checkedToppingsArray);
+  
+   renderPizzas(checkedToppingsArray);
+
+
   });
 
 }

@@ -25,7 +25,12 @@ const createCard=(elem)=>{
 }
 //функция вывода карточек
 export const renderPizzas=async(toppings)=>{
+  /*
   const pizzas =await getData(`https://amused-ripple-clove.glitch.me/api/products${toppings ? `?toppings=${toppings}`: ''}`);
+  */
+
+  const pizzas =await getData('https://amused-ripple-clove.glitch.me/api/products');
+
   console.log('Массив с сервера',pizzas);
   //найдем список пицц
   const pizzaList=document.querySelector('.pizza__list');
