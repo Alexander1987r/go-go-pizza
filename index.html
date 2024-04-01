@@ -347,6 +347,59 @@
     </ul>
   </div>
 </footer>
+<!--modal-->
+<div class="modal modal-pizza">
+ <div class="">
+  <h2 class="modal__title">С грибами</h2>
+  <img class="modal__image" src="img/modal/modal-image.png" alt="фото пицци с грибами" width="180" height="180">
+  <p class="modal__text content">
+    Грибы, сыр, томатный соус, лук, болгарский перец
+    <span class="content__price">490 ₽</span>
+    <span>/</span>
+    <span class="content__size">25 см</span>
+  </p>
+  <form class="modal__form">
+    <!--поле(тоное-толстое) -->
+    <fieldset class="modal__form-field field">
+      <input class="field__input" name="crust" value="thick" id="thick" type="radio">
+      <label class="field__label" for="thick">
+        Пышное тесто
+      </label>
+      <input class="field__input" name="crust" value="thin" id="thin" type="radio" checked>
+      <label class="field__label" for="thin">
+        Тонкое тесто
+      </label>
+    </fieldset>
+
+    <!--поле(размер) -->
+    <fieldset class="modal__form-field field">
+      <input class="field__input" name="size" value="25 см" id="25 см" type="radio" checked>
+      <label class="field__label" for="25 см">
+        25 см
+      </label>
+
+      <input class="field__input" name="size" value="30 см" id="30 см" type="radio">
+      <label class="field__label" for="30 см">
+        30 см
+      </label>
+
+      <input class="field__input" name="size" value="35 см" id="35 см" type="radio">
+      <label class="field__label" for="35 см">
+        35 см
+      </label>
+    </fieldset>
+    <button class="modal__form-submit" type="submit">
+      В корзину
+    </button>
+  </form>
+  <button class="modal__close" type="button">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="14.8333" y="4" width="0.851136" height="15.3204" transform="rotate(45 14.8333 4)" fill="#C1AB91"/>
+      <rect x="4" y="4.60181" width="0.851136" height="15.3204" transform="rotate(-45 4 4.60181)" fill="#C1AB91"/>
+    </svg>
+  </button>
+ </div>
+</div>
 <script src="js/main.js" type="module"></script>
 </body>
 </html>
