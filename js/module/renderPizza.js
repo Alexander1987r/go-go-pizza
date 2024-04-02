@@ -1,5 +1,5 @@
 import { getData } from "./data.js";
-
+import { showLoader ,hideLoader} from "./loader.js";
 //функция создания карточки
 const createCard=(elem)=>{
   const card=document.createElement('article');
@@ -23,11 +23,40 @@ const createCard=(elem)=>{
   `;
   return card;
 }
+
+
+const get= async()=>{
+  showLoader();
+  return await fetch('https://amused-ripple-clove.glitch.me/api/products')
+  .then((response)=>{
+   if(response.ok){
+     return response.json();
+    }
+    throw new Error('Failed you fetch pizza products');
+   })
+  .then((data)=>{
+   return data;
+  })
+  .catch((error)=>{
+   console.error(`Error fetching pizza products:${error}`);
+   return [];
+ })
+ .finally(()=>{
+  hideLoader();
+ });
+
+}
 //функция вывода карточек
 export const renderPizzas=async(toppings)=>{
 
-  const pizzas =await getData(`https://amused-ripple-clove.glitch.me/api/products${toppings ? `?toppings=${toppings}`: ''}`);
-  console.log('Массив с сервера',pizzas);
+
+  /*
+   const pizzas =await getData(`https://amused-ripple-clove.glitch.me/api/products${toppings ? `?toppings=${toppings}`: ''}`);
+   console.log('Массив с сервера',pizzas);
+  */
+
+  const pizzas=await get();
+  console.log(pizzas);
   //найдем список пицц
   const pizzaList=document.querySelector('.pizza__list');
   pizzaList.innerHTML='';

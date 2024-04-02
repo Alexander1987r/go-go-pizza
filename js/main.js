@@ -82,11 +82,8 @@ const renderToppings=async()=>{
   for(let [,value] of formData){
     checkedToppingsArray.push(value);
   }
-  console.log(checkedToppingsArray);
-
+   console.log(checkedToppingsArray);
    renderPizzas(checkedToppingsArray);
-
-
   });
 
 }

@@ -23,7 +23,7 @@ export const getData=async (url)=>{
 
 export const getData= async(url)=>{
   showLoader();
-  return fetch(url)
+  return await fetch(url)
   .then((response)=>{
    if(response.ok){
      return response.json();
