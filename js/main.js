@@ -1,5 +1,6 @@
 import { getToppingsToggle } from "./module/openToppings.js";
 import { renderPizzas } from "./module/renderPizza.js";
+import { getData } from "./module/data.js";
 
 /*
  //альтернативный способ извлечения данных с сервера по METHED
@@ -34,25 +35,7 @@ const createCard=(tagName,className,text)=>{
 */
 
 
-
-
-
-// получение данных с сервера топпингов способ цепочками then
-const getTopping=async()=>{
-  return fetch('https://amused-ripple-clove.glitch.me/api/toppings')
-  .then((response)=>{
-    if(response.ok){
-      return response.json();
-    }
-    throw new Error('Failed you fetch pizza products');
-  })
-  .then((data)=>{
-    return data;
-  })
-  .catch((error)=>{
-    console.error(`Error fetching pizza products:${error}`);
-  })
-}
+//функция создания
 const createToppings=(enName,ruName)=>{
   const toppingsItem=document.createElement('li');
   toppingsItem.classList.add('toppings__item');
@@ -64,9 +47,10 @@ const createToppings=(enName,ruName)=>{
   `;
   return toppingsItem;
 }
+
 //функция вывода топпингов
 const renderToppings=async()=>{
-  const topping=await getTopping();
+  const topping=await getData('https://amused-ripple-clove.glitch.me/api/toppings');
   console.log('Топпинг с сервера',topping);
   //деструктурируем
   const {en:enToppings,ru:ruToppings}=topping;
@@ -99,14 +83,13 @@ const renderToppings=async()=>{
     checkedToppingsArray.push(value);
   }
   console.log(checkedToppingsArray);
-  
+
    renderPizzas(checkedToppingsArray);
 
 
   });
 
 }
-
 
 //обьявление функции инициализации
 const init=()=>{
