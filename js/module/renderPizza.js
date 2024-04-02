@@ -25,27 +25,25 @@ const createCard=(elem)=>{
 }
 
 
-const get= async()=>{
-  showLoader();
-  return await fetch('https://amused-ripple-clove.glitch.me/api/products')
-  .then((response)=>{
-   if(response.ok){
-     return response.json();
-    }
-    throw new Error('Failed you fetch pizza products');
-   })
-  .then((data)=>{
-   return data;
-  })
-  .catch((error)=>{
-   console.error(`Error fetching pizza products:${error}`);
-   return [];
- })
- .finally(()=>{
-  hideLoader();
- });
+const get=async ()=>{
 
+  showLoader();
+  try{
+    const response=await fetch('https://amused-ripple-clove.glitch.me/api/products');
+    if(!response.ok){
+      throw new Error('Failed you fetch pizza products');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error){
+    console.error(`${error}`);
+  } finally{
+    hideLoader();
+  }
 }
+
+
+
 //функция вывода карточек
 export const renderPizzas=async(toppings)=>{
 
