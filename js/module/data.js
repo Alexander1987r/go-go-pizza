@@ -19,8 +19,6 @@ export const getData=async (url)=>{
 }
 */
 
-
-
 export const getData= async(url)=>{
   showLoader();
   return await fetch(url)

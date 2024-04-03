@@ -349,15 +349,19 @@
 </footer>
 <!--modal-->
 <div class="modal modal-pizza">
- <div class="">
-  <h2 class="modal__title">С грибами</h2>
+ <div class="modal__wrapper">
+  <h2 class="modal__title">
+    С грибами
+  </h2>
   <img class="modal__image" src="img/modal/modal-image.png" alt="фото пицци с грибами" width="180" height="180">
   <p class="modal__text content">
-    Грибы, сыр, томатный соус, лук, болгарский перец
-    <span class="content__price">490 ₽</span>
-    <span>/</span>
-    <span class="content__size">25 см</span>
-  </p>
+      <span class="content__text">
+        Грибы, сыр, томатный соус, лук, болгарский перец
+      </span>
+      <b class="content__price">490 ₽</b>
+      <span>/</span>
+      <span class="content__size">25 см</span>
+    </p>
   <form class="modal__form">
     <!--поле(тоное-толстое) -->
     <fieldset class="modal__form-field field">
@@ -365,26 +369,27 @@
       <label class="field__label" for="thick">
         Пышное тесто
       </label>
+
       <input class="field__input" name="crust" value="thin" id="thin" type="radio" checked>
-      <label class="field__label" for="thin">
+      <label class="field__label field__label_active" for="thin">
         Тонкое тесто
       </label>
     </fieldset>
 
     <!--поле(размер) -->
     <fieldset class="modal__form-field field">
-      <input class="field__input" name="size" value="25 см" id="25 см" type="radio" checked>
-      <label class="field__label" for="25 см">
+      <input class="field__input" name="size" value="25 см" id="25см" type="radio" checked>
+      <label class="field__label field__label_active"  for="25см">
         25 см
       </label>
 
-      <input class="field__input" name="size" value="30 см" id="30 см" type="radio">
-      <label class="field__label" for="30 см">
+      <input class="field__input" name="size" value="30 см" id="30см" type="radio">
+      <label class="field__label" for="30см">
         30 см
       </label>
 
-      <input class="field__input" name="size" value="35 см" id="35 см" type="radio">
-      <label class="field__label" for="35 см">
+      <input class="field__input" name="size" value="35 см" id="35см" type="radio">
+      <label class="field__label" for="35см">
         35 см
       </label>
     </fieldset>
