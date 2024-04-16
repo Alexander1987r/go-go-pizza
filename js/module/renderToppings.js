@@ -1,5 +1,6 @@
 import { getData } from "./data.js";
 import { renderPizzas } from "./renderPizza.js";
+import { changeFirstUpperCase } from "./util.js";
 //функция создания
 const createToppings=(enName,ruName)=>{
   const toppingsItem=document.createElement('li');
@@ -7,7 +8,7 @@ const createToppings=(enName,ruName)=>{
   toppingsItem.innerHTML=`
   <input class="toppings__checkbox" type="checkbox" name="topping" id="${enName}" value="${enName}">
   <label for="${enName}" class="toppings__label">
-  ${ruName[0].toUpperCase()}${ruName.slice(1)}
+  ${changeFirstUpperCase(ruName)}
   </label>
   `;
   return toppingsItem;
@@ -16,10 +17,9 @@ const createToppings=(enName,ruName)=>{
 //функция вывода топпингов
 export const renderToppings=async()=>{
   const topping=await getData('https://amused-ripple-clove.glitch.me/api/toppings');
-  console.log('Топпинг с сервера',topping);
   //деструктурируем
   const {en:enToppings,ru:ruToppings}=topping;
-  console.log(enToppings,ruToppings);
+
 
   //найдем список топпингов
   const toppingsList=document.querySelector('.toppings__list');
@@ -56,7 +56,7 @@ export const renderToppings=async()=>{
    if(checkedToppingsArray.length > 0){
     toppingsList.append(toppingsItem);
    } else {
-     toppingsItem.remove();
+      toppingsItem.remove();
    }
 
   //повесим прослушиватель по клику
@@ -66,6 +66,7 @@ export const renderToppings=async()=>{
   const clearForm=()=>{
     toppingsItem.remove();
     toppingsForm.reset();
+    renderPizzas();
     toppingsButton.removeEventListener('click',clearForm);
   }
 }

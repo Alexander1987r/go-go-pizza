@@ -10,6 +10,9 @@
   color: var(--dark);
   margin-bottom: 60px;
 }
+.pizza__title_not{
+  margin-bottom: 24px !important;
+}
 .pizza__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -18,25 +21,37 @@
 }
 .pizza__item {
 }
-
+.pizza__reset{
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--white);
+  background-color: var(--orange);
+  border-radius: 32px;
+  padding: 8px 24px;
+}
 @media(min-width:768px){
   .pizza {
     padding: 64px 0;
   }
+
   .pizza__title {
     font-size: 44px;
     margin-bottom: 70px;
   }
+
   .pizza__list {
     grid-column-gap: 16px;
     grid-row-gap:62px ;
   }
+
 }
+
 @media(min-width:1024px){
   .pizza__list {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
 @media(min-width:1440px){
   .pizza__list {
   grid-template-columns: 1fr 1fr 1fr 1fr;

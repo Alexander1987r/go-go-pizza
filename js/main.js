@@ -1,7 +1,8 @@
 import { getToppingsToggle } from "./module/openToppings.js";
 import { renderPizzas } from "./module/renderPizza.js";
-import { renderToppings } from "./module/renderToppngs.js";
-
+import { renderToppings } from "./module/renderToppings.js";
+import { modalController } from "./module/modal.js";
+import { modalCartController } from "./module/renderCart.js";
 
 /*
  //альтернативный способ извлечения данных с сервера по METHED
@@ -43,6 +44,26 @@ const init=()=>{
   getToppingsToggle();
   renderToppings();
   renderPizzas();
+  modalController(
+    {
+      modal:'.modal-cart',
+      btnOpen:'.navigation__button',
+      btnClose:'.modal__close',
+      cbOpen(){
+        modalCartController();
+      }
+    }
+  );
+  modalController(
+    {
+      modal:'.modal-cart',
+      btnOpen:'.hero__button',
+      btnClose:'.modal__close',
+      cbOpen(){
+        modalCartController();
+      }
+    }
+  );
 }
 
 //вызов функции инициализации
