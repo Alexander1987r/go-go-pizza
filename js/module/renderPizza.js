@@ -38,10 +38,9 @@ const createCard=(elem)=>{
   return card;
 }
 
-
 //функция вывода карточек
 export const renderPizzas=async(toppings)=>{
-  const pizzas =await getData(`https://amused-ripple-clove.glitch.me/api/products${toppings ? `?toppings=${toppings}`: ''}`);
+  const pizzas =await getData(`https://familiar-clean-wavelength.glitch.me/api/products${toppings ? `?toppings=${toppings}`: ''}`);
    console.log('Массив с сервера',pizzas);
 
 
