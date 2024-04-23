@@ -73,7 +73,7 @@ export const renderPizzas=async(toppings)=>{
         btnOpen:'.card__button',
         btnClose:'.modal__close',
         async cbOpen(btnOpen){
-          const pizzaModal=await getData(`https://amused-ripple-clove.glitch.me/api/products/${btnOpen.dataset.id}`);
+          const pizzaModal=await getData(`https://familiar-clean-wavelength.glitch.me/api/products/${btnOpen.dataset.id}`);
           renderModalPizza(pizzaModal);
         }
       }
